@@ -1,7 +1,8 @@
 import React from "react";
-import { IListItem, ISubListItem, SubList } from "./navBarData";
+import { IListItem } from "./navBarData";
+import uuid from 'uuid-random';
 
-const ListItem = ({ text }: IListItem) => {
+const ListItem = ({ title, body }: IListItem) => {
   const [isOpenSubList, setIsOpenSubList] = React.useState(false);
 
   return (
@@ -14,7 +15,7 @@ const ListItem = ({ text }: IListItem) => {
           className="listItem-title_text"
           style={{ color: isOpenSubList ? "#259609" : "#3E3E3E" }}
         >
-          {text}
+          {title}
         </div>
         <svg
           className="listItem-title_arrow"
@@ -41,8 +42,8 @@ const ListItem = ({ text }: IListItem) => {
         }}
         className="listItem-sublist"
       >
-        {SubList.map((el: ISubListItem) => (
-          <li className="listItem-sublist_li">{el.text}</li>
+        {body.map((text: string) => (
+          <li key={uuid()} className="listItem-sublist_li">{text}</li>
         ))}
       </ul>
     </div>

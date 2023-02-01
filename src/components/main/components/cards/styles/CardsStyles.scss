@@ -1,0 +1,147 @@
+@import "../../../../../styles/colors.scss";
+
+.whiteCard,
+.greenCard {
+  width: 100%;
+  max-width: 282px;
+  height: 405px;
+  border-radius: 2px;
+  font-family: Helvetica;
+  padding: 30px;
+  cursor: pointer;
+
+  &-button {
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    transition: all 0.4s;
+  }
+}
+
+.whiteCard {
+  border-top: 6px solid $green;
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.06);
+
+  &-logo {
+    align-self: flex-end;
+    margin-bottom: 31px;
+  }
+
+  &-h3 {
+    font-size: 13px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $green;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  &-h1 {
+    color: $black;
+    font-family: "Helvetica";
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    margin-bottom: 73px;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    height: 46px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    &_graduation,
+    &_shedule {
+      display: flex;
+      align-items: center;
+      svg {
+        margin-top: -3px;
+        margin-right: 13px;
+      }
+      span {
+        color: $black;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 400;
+      }
+    }
+
+    &_shedule {
+      svg {
+        margin-left: 2px;
+      }
+    }
+  }
+
+  &-button {
+    background: $green;
+    color: $white;
+  }
+}
+
+.greenCard {
+  justify-content: space-between;
+  background: $green;
+  color: $white;
+  box-shadow: 0px 22px 37px rgba(0, 0, 0, 0.2);
+  &:hover{
+    transition: all .3s;
+    .greenCard-button{
+      background: $white;
+      color: $green;
+    }
+  }
+
+  &-h2 {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  &-duration,
+  &-startDates {
+    &_title {
+      font-weight: 600;
+    }
+
+    &_title,
+    &_min,
+    &_max,
+    &_date {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  &-duration {
+    margin-bottom: 20px;
+  }
+
+  &-startDates {
+    margin-bottom: 31px;
+  }
+
+  &-price {
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &-button {
+    background: rgba(255, 255, 255, 0.25);
+    color: $white;
+  }
+}

@@ -1,24 +1,21 @@
-export interface IListItem{
-    text: string;
+export interface IListItem {
+  title: string;
+  body: Array<string>;
 }
-
-export const list: Array<IListItem> = [
-  { text: "Business & Management"},
-  { text: "Computing & IT" },
-  { text: "Fashion & Media" },
-  { text: "Finance & Accounting" },
-  { text: "Law & Criminology" },
-  {text: "Marketing & Communications"},
-  {text: "Psychology & Social Sciences"}
+const SubList: Array<string> = [
+  "Market Research Executie",
+  "Child Psychologist",
+  "Guidance Counsellor",
+  "Behaviour Analyst",
+  "Recreational Therapist",
 ];
 
-export interface ISubListItem extends IListItem{}
-
-export const SubList: Array<ISubListItem> =[
-    {text: "Market Research Executive"},
-    {text: "Child Psychologist"},
-    {text: "Guidance Counsellor"},
-    {text: "Behaviour Analyst"},
-    {text: "Recreational Therapist"}
-    
-]
+export const list: Array<IListItem> = [
+  { title: "Business & Management", body: SubList },
+  { title: "Computing & IT", body: SubList },
+  { title: "Fashion & Media", body: SubList },
+  { title: "Finance & Accounting", body: SubList },
+  { title: "Law & Criminology", body: SubList },
+  { title: "Marketing & Communications", body: SubList },
+  { title: "Psychology & Social Sciences", body: SubList },
+];

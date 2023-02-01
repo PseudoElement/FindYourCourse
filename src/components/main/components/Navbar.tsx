@@ -2,6 +2,7 @@ import React from "react";
 import { list, IListItem } from "./navBarData";
 import ListItem from "./ListItem";
 import ButtonBar from "./ButtonBar";
+import uuid from "uuid-random";
 
 const Navbar = () => {
   return (
@@ -12,7 +13,7 @@ const Navbar = () => {
       </div>
       <div className="navBar-list">
         {list.map((el: IListItem) => (
-          <ListItem text={el.text} />
+          <ListItem key={uuid()} title={el.title} body={el.body} />
         ))}
       </div>
       <ButtonBar/>

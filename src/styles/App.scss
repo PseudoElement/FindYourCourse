@@ -5,8 +5,13 @@
 body{
   background: #F7F7F7;;
 }
-.App {
-  border: 2px solid black;
-  padding: 2rem 126px 60px 122px;
-  margin: 10px; 
+#root{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HomePage {
+  margin: 60px 126px 60px 122px;
+  display: flex;
+  flex-direction: column;
 }
