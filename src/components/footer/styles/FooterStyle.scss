@@ -1,0 +1,13 @@
+@import "../../../styles/colors.scss";
+
+footer {
+  span {
+    font-family: "Helvetica";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $black;
+    margin-right: 12px;
+  }
+}

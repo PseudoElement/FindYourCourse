@@ -1,0 +1,113 @@
+@import "../../../styles/colors.scss";
+
+main {
+  font-family: Helvetica;
+
+  .navBar {
+    width: 286px;
+    border-radius: 2px;
+    background: $white;
+    font-size: 16px;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.06);
+    padding: 32px 15px 29px 15px;
+
+    &-title {
+      display: flex;
+      align-items: center;
+      &_text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: $green;
+      }
+      img {
+        margin-top: -5px;
+        margin-right: 13px;
+      }
+    }
+
+    &-list {
+      margin: 20px 0;
+      border-top: 1px solid #ececec;
+      border-bottom: 1px solid #ececec;
+      padding: 22px 13px;
+      .listItem {
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        user-select: none;
+        margin: 22px 0;
+        &:hover {
+          svg {
+            path {
+              stroke: $green;
+            }
+          }
+          .listItem-title_text {
+            color: $green !important;
+          }
+        }
+        &-title {
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          svg {
+            transition: all 0.4s;
+          }
+          &_text {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            color: $black;
+            transition: all 0.4s;
+          }
+        }
+        &-sublist {
+          flex-direction: column;
+          align-items: left;
+          &_li {
+            transition: all .3s;
+            cursor: pointer;
+            padding: 16px 13px ;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 22px;
+            color: $black;
+            &:hover {
+              background: #f2f2f2;
+              border-radius: 3px;
+            }
+            &:active{
+              background: rgba(37, 150, 9, 0.15);
+              color: $green;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .navBar-button {
+    background: $white;
+    opacity: 0.35;
+    border: 1px solid $green;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: $green;
+    padding: 15px;
+    opacity: 1;
+    width: 100%;
+  }
+}
