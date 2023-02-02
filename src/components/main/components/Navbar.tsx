@@ -17,10 +17,14 @@ const Navbar = () => {
         color: isOpenNavBar ? "#259609" : "#3E3E3E",
     };
 
+    const toggleList = ()=>{
+        isMobile && setIsOpenNavBar((prev) => !prev)
+    }
+
     return (
         <div className="navBar" id="navBar">
             <div
-                onClick={() => setIsOpenNavBar((prev) => !prev)}
+                onClick={toggleList}
                 className="navBar-title"
             >
                 <img src={Hat} alt="LogoHat" />
