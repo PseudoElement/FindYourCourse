@@ -1,119 +1,6 @@
 @import "../../../../../styles/colors.scss";
-@font-face {
-  font-family: "Helvetica-Custom";
-  src: url("../../../../../styles/fonts/Helvetica-BoldOblique.ttf");
-}
 
-.whiteCard,
-.greenCard {
-  user-select: none;
-  width: 100%;
-  max-width: 282px;
-  height: 405px;
-  border-radius: 2px;
-  padding: 30px;
-  cursor: pointer;
-
-  &-button {
-    @include alignCenter;
-    width: 100%;
-    height: 44px !important;
-    font-size: 14px;
-    line-height: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: all 0.4s;
-    border-radius: 3px;
-    font-family: "Helvetica-Bold";
-  }
-}
-
-.whiteCard {
-  border-top: 6px solid $green;
-  background: $white;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.06);
-
-  &-logo {
-    align-self: flex-end;
-    margin-bottom: 31px;
-  }
-
-  &-h3 {
-    font-size: 13px;
-    line-height: 20px;
-    text-transform: uppercase;
-    color: $green;
-    font-weight: 500;
-    margin-bottom: 10px;
-    font-family: "Helvetica-Medium";
-  }
-
-  &-h1 {
-    color: $black;
-    font-size: 20px;
-    line-height: 30px;
-    margin-bottom: 70px;
-    font-family: "Helvetica-Bold";
-  }
-
-  &-info {
-    display: flex;
-    flex-direction: column;
-    height: 46px;
-    justify-content: space-between;
-    margin-bottom: 23px;
-
-    &_graduation,
-    &_shedule {
-      display: flex;
-      align-items: center;
-      svg {
-        margin-top: -3px;
-        margin-right: 13px;
-      }
-      span {
-        color: $black;
-        font-size: 14px;
-        line-height: 16px;
-        font-weight: 500;
-        font-family: "Helvetica-Medium";
-      }
-    }
-
-    &_shedule {
-      svg {
-        margin-left: 2px;
-      }
-    }
-  }
-
-  &-button {
-    background: $green;
-    color: $white;
-  }
-}
-
-.greenCard {
-  position: relative;
-  justify-content: space-between;
-  background: $green;
-  color: $white;
-  box-shadow: 0px 22px 37px rgba(0, 0, 0, 0.2);
-  &:hover {
-    .greenCard-button {
-      background: $white;
-      color: $green;
-    }
-    .greenCard-closeBtn {
-      opacity: 0.7;
-      transform: rotate(0deg);
-    }
-  }
-
-  &-closeBtn {
-    @include alignCenter;
+@mixin closeBtn {
     transform: rotate(-45deg);
     transition: all 0.4s;
     position: absolute;
@@ -121,72 +8,220 @@
     color: $green;
     font-size: 25px;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    right: 20px;
-    top: 20px;
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     width: 30px;
     height: 30px;
+    @include alignCenter;
+    @content;
+}
+
+.whiteCard,
+.greenCard {
+    user-select: none;
+    width: 100%;
+    max-width: 282px;
+    height: 405px;
+    border-radius: 2px;
+    padding: 30px;
+    cursor: pointer;
+
+    &-button {
+        @include alignCenter;
+        width: 100%;
+        height: 44px !important;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: all 0.4s;
+        border-radius: 3px;
+        font-family: "Helvetica-Bold";
+    }
+}
+
+.whiteCard {
+    position: relative;
+    border-top: 6px solid $green;
     background: $white;
-    z-index: 10;
-  }
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.06);
 
-  &-h2 {
-    font-family: "Helvetica-Bold";
-    text-align: left;
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-
-  &-duration,
-  &-startDates {
-    &_title {
-      font-family: "Helvetica-Bold";
+    &-logo {
+        align-self: flex-end;
+        margin-bottom: 31px;
     }
 
-    &_title,
-    &_min,
-    &_max,
-    &_date {
-      font-size: 14px;
-      line-height: 22px;
+    &-h3 {
+        font-size: 13px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: $green;
+        font-weight: 500;
+        margin-bottom: 10px;
+        font-family: "Helvetica-Medium";
     }
 
-    &_min,
-    &_max,
-    &_date {
-      font-family: "Helvetica-Medium";
+    &-h1 {
+        color: $black;
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 70px;
+        font-family: "Helvetica-Bold";
     }
-  }
 
-  &-duration {
-    margin-bottom: 20px;
-  }
+    &-info {
+        display: flex;
+        flex-direction: column;
+        height: 46px;
+        justify-content: space-between;
+        margin-bottom: 23px;
 
-  &-startDates {
-    margin-bottom: 31px;
-  }
+        &_graduation,
+        &_shedule {
+            display: flex;
+            align-items: center;
+            svg {
+                margin-top: -3px;
+                margin-right: 13px;
+            }
+            span {
+                color: $black;
+                font-size: 14px;
+                line-height: 16px;
+                font-weight: 500;
+                font-family: "Helvetica-Medium";
+            }
+        }
 
-  &-price {
-    font-size: 32px;
-    line-height: 44px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    font-family: "Helvetica-Bold";
-  }
+        &_shedule {
+            svg {
+                margin-left: 2px;
+            }
+        }
+    }
 
-  &-button {
-    background: rgba(255, 255, 255, 0.25);
+    &-button {
+        background: $green;
+        color: $white;
+    }
+}
+
+.greenCard {
+    position: relative;
+    justify-content: space-between;
+    background: $green;
     color: $white;
-  }
+    box-shadow: 0px 22px 37px rgba(0, 0, 0, 0.2);
+    &:hover {
+        .greenCard-button {
+            background: $white;
+            color: $green;
+        }
+        .greenCard-closeBtn {
+            opacity: 0.7;
+            transform: rotate(0deg);
+        }
+    }
+
+    &-closeBtn {
+        @include closeBtn;
+        color: $green;
+        right: 20px;
+        top: 20px;
+        background: $white;
+    }
+
+    &-h2 {
+        font-family: "Helvetica-Bold";
+        text-align: left;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    &-duration,
+    &-startDates {
+        &_title {
+            font-family: "Helvetica-Bold";
+        }
+
+        &_title,
+        &_min,
+        &_max,
+        &_date {
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        &_min,
+        &_max,
+        &_date {
+            font-family: "Helvetica-Medium";
+        }
+    }
+
+    &-duration {
+        margin-bottom: 20px;
+    }
+
+    &-startDates {
+        margin-bottom: 31px;
+    }
+
+    &-price {
+        font-size: 32px;
+        line-height: 44px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-family: "Helvetica-Bold";
+    }
+
+    &-button {
+        background: rgba(255, 255, 255, 0.25);
+        color: $white;
+    }
 }
 
 @media screen and (max-width: 890px) {
-  #whiteCard {
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-    height: 330px;
-    width: 100%;
-    max-width: 330px;
-  }
+    #whiteCard {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+        height: 330px;
+        width: 100%;
+        max-width: 330px;
+        padding: 21px 15px 20px 24px;
+
+        &:hover {
+            .whiteCard-closeBtn {
+                opacity: 0.7;
+                transform: rotate(0deg);
+            }
+        }
+
+        .whiteCard-closeBtn {
+            @include closeBtn;
+            top: 23px;
+            left: 24px;
+            color: $white;
+            background: $green;
+        }
+        .whiteCard-logo {
+            margin-bottom: 12.5px;
+        }
+        .whiteCard-h1 {
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 6px;
+        }
+        .whiteCard-info {
+            margin-bottom: 35px;
+        }
+        .whiteCard-price {
+            color: $black;
+            font-family: "Helvetica-Bold";
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+    }
 }
