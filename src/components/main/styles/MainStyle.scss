@@ -187,6 +187,8 @@ main {
 
         .navBar-title {
             cursor: pointer;
+            font-family: "Raleway", sans-serif;
+            font-weight: 500;
             width: 100%;
             height: 100%;
             max-height: 52px;
@@ -209,6 +211,8 @@ main {
 
             &_text {
                 color: black;
+                font-size: 16px;
+                line-height: 22px;
             }
         }
 
