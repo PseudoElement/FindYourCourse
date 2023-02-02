@@ -3,3 +3,11 @@ $white: #FFFFFF;
 $gray-hover: #F2F2F2;
 $black: #3E3E3E;
 $gray-bar-mobile: #F1F1F1;
+$bg-mobile: #E5E5E5;
+
+@mixin alignCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @content;
+  }

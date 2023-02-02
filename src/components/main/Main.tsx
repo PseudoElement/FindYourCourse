@@ -8,19 +8,22 @@ import Barco from "./pics/Barco.png";
 import Buffet from "./pics/Buffet.png";
 import Danisco from "./pics/Danisco.png";
 import Embratur from "./pics/Embratur.png";
+import { useScreenSizeContext } from "../../context/ScreenSizeContext";
 
 const Main = () => {
+  const { isMobile } = useScreenSizeContext();
+
   return (
     <main>
-      <div className="leftPart">
+      <div className="leftPart" id="leftPart">
         <Navbar />
       </div>
       <div className="rightPart">
-        <section className="cards">
+        <section className="cards" id="cards">
           <WhiteCard logo={Embratur} />
-          <GreenCard />
+          {!isMobile && <GreenCard />}
           <WhiteCard logo={Danisco} />
-          <GreenCard />
+          {!isMobile && <GreenCard />}
           <WhiteCard logo={Buffet} />
           <WhiteCard logo={Barco} />
         </section>

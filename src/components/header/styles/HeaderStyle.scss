@@ -1,4 +1,13 @@
 header {
-    font-family: "Playfair Display", serif;
-    margin-bottom: 30px;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 46px;
+}
+
+@media  screen and (max-width: 890px) {
+  header{
+    margin-bottom: 16.5px;
   }
+}

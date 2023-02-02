@@ -3,9 +3,10 @@ import "./styles/CardsStyles.scss";
 
 const GreenCard = () => {
   return (
-    <div className="greenCard">
+    <div className="greenCard" id="greenCard">
+      <button className="greenCard-closeBtn">+</button>
       <h2 className="greenCard-h2">
-        MSc Data Analytics and Information Systems Management
+        MSc Data Analytics <br/> and Information Systems Management
       </h2>
       <div className="greenCard-duration">
         <h4 className="greenCard-duration_title">Duration:</h4>

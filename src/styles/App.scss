@@ -2,16 +2,41 @@
 @import "colors.scss";
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 
-body{
-  background: #F7F7F7;;
+@font-face {
+  font-family: "Helvetica-Bold";
+  src: url(./fonts/Helvetica-Bold.ttf);
 }
-#root{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+@font-face {
+  font-family: "Helvetica-Light";
+  src: url(./fonts/helvetica-light-587ebe5a59211.ttf);
+}
+
+@font-face {
+  font-family: "Helvetica-Medium";
+  src: url(./fonts/Helvetica.ttf);
+}
+
+body {
+  background: #f7f7f7;
+}
+#root {
+  @include alignCenter;
 }
 .HomePage {
   margin: 60px 126px 60px 122px;
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (max-width: 890px) {
+  .HomePage {
+    margin: 15px;
+  }
+
+  body {
+    background: white;
+    // background: $bg-mobile; ///<-----------Здесь значение BG как в инспекторе Figma,
+    /// На макете там белый цвет, наверное фича, оставляю как в инспекторе
+  }
 }
