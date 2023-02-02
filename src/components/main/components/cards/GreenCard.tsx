@@ -4,7 +4,7 @@ import "./styles/CardsStyles.scss";
 const GreenCard = () => {
   return (
     <div className="greenCard" id="greenCard">
-      <button className="greenCard-closeBtn">+</button>
+      <button className="greenCard-closeBtn">✕</button>
       <h2 className="greenCard-h2">
         MSc Data Analytics <br/> and Information Systems Management
       </h2>
