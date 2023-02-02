@@ -11,7 +11,7 @@ const WhiteCard = ({ logo }: WhiteCardProps) => {
 
     return (
         <div className="whiteCard" id="whiteCard">
-            {isMobile && <button className="whiteCard-closeBtn">+</button>}
+            {isMobile && <button className="whiteCard-closeBtn">✕</button>}
             <img className="whiteCard-logo" src={logo} alt="" />
             <h3 className="whiteCard-h3">Business & Management</h3>
             <h1 className="whiteCard-h1">
