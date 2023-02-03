@@ -67,7 +67,7 @@ main {
                                     stroke: $green;
                                 }
                             }
-                            .listItem-title_text{
+                            .listItem-title_text {
                                 color: $green !important;
                             }
                         }
@@ -197,13 +197,6 @@ main {
             display: flex;
             justify-content: flex-start;
 
-            &:hover {
-                ~ svg {
-                    path {
-                        stroke: $green;
-                    }
-                }
-            }
             img {
                 margin-right: 11px;
             }

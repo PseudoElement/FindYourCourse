@@ -5,13 +5,13 @@ import { useScreenSizeContext } from "../../../context/ScreenSizeContext";
 
 const ListItem = ({ title, body }: IListItem) => {
     const [isOpenSubList, setIsOpenSubList] = React.useState(false);
-    const listItemTitleRef = React.useRef<any>();
+    const listItemTitleRef = React.useRef<HTMLDivElement | null>(null);
     const { isMobile } = useScreenSizeContext();
 
     React.useEffect(() => {
         !isMobile
-            ? listItemTitleRef.current.classList.add("desktopHover")
-            : listItemTitleRef.current.classList.remove("desktopHover");
+            ? listItemTitleRef.current?.classList.add("desktopHover")
+            : listItemTitleRef.current?.classList.remove("desktopHover");
     }, [isMobile]);
     return (
         <div className="listItem">
