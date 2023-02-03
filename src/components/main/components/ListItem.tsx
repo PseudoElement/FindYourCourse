@@ -1,13 +1,22 @@
 import React from "react";
 import { IListItem } from "./navBarData";
 import uuid from "uuid-random";
+import { useScreenSizeContext } from "../../../context/ScreenSizeContext";
 
 const ListItem = ({ title, body }: IListItem) => {
     const [isOpenSubList, setIsOpenSubList] = React.useState(false);
+    const listItemTitleRef = React.useRef<any>();
+    const { isMobile } = useScreenSizeContext();
 
+    React.useEffect(() => {
+        !isMobile
+            ? listItemTitleRef.current.classList.add("desktopHover")
+            : listItemTitleRef.current.classList.remove("desktopHover");
+    }, [isMobile]);
     return (
         <div className="listItem">
             <div
+                ref={listItemTitleRef}
                 onClick={() => setIsOpenSubList((prev) => !prev)}
                 className="listItem-title"
             >

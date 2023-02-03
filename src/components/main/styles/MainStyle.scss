@@ -61,13 +61,15 @@ main {
                     user-select: none;
                     margin: 22px 0;
                     &:hover {
-                        svg {
-                            path {
-                                stroke: $green;
+                        .desktopHover {
+                            svg {
+                                path {
+                                    stroke: $green;
+                                }
                             }
-                        }
-                        .listItem-title_text {
-                            color: $green !important;
+                            .listItem-title_text{
+                                color: $green !important;
+                            }
                         }
                     }
                     &-title {
@@ -194,10 +196,7 @@ main {
             max-height: 52px;
             display: flex;
             justify-content: flex-start;
-            :hover {
-                color: $green !important;
-                transition: all 0.4s;
-            }
+
             &:hover {
                 ~ svg {
                     path {
